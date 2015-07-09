@@ -1,6 +1,2 @@
-section.section--center.mdl-grid
-  .mdl-cell
-    = link_to content_tag(:i, 'add', class: 'material-icons'), new_poll_path,
-        class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored'
-
+= render 'form'
 = render @polls

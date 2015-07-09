@@ -1,12 +1,21 @@
-section.section--center.mdl-grid
-  .mdl-cell.mdl-card.mdl-shadow--2dp.mdl-cell--12-col
-    .mdl-card__title
-      h3.mdl-card_title-text
-        = poll.title
-    .mdl-card__supporting-text
-        = poll.description
-    .mdl-card__actions.mdl-card--border
-        = link_to content_tag(:i, 'thumb-up', class: 'material-icons'),
-          root_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored'
-        = link_to content_tag(:i, 'thumb-down', class: 'material-icons'),
-          root_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored'
+section.section-poll.mdl-shadow--2dp
+  .mdl-grid
+    .mdl-cell.mdl-cell--12-col
+      .mdl-grid
+        .mdl-cell.mdl-cell--6-col.align-center
+          = t 'created_at'
+          = time_tag poll.created_at
+          h3
+            = link_to poll.title, poll
+        .mdl-cell.mdl-cell--6-col.align-center
+          = t '.votes'
+          h3
+            .votes-result
+              span.yes_votes
+                i.material-icons
+                  | thumb_up
+                = poll.result_yes_votes 
+              span.no_votes
+                i.material-icons
+                  | thumb_down
+                = poll.result_no_votes

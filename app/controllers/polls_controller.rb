@@ -5,16 +5,12 @@ class PollsController < ApplicationController
   # GET /polls.json
   def index
     @polls = Poll.all
+    @poll = Poll.new
   end
 
   # GET /polls/1
   # GET /polls/1.json
   def show
-  end
-
-  # GET /polls/new
-  def new
-    @poll = Poll.new
   end
 
   # GET /polls/1/edit
