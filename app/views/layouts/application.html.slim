@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title
+      | Enquetes
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag    'https://fonts.googleapis.com/icon?family=Material+Icons', media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body.mdl-color--grey-100.mdl-color-text--grey-700
+    .mdl-layout__container
+      .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+
+        header.mdl-layout__header
+
+          .mdl-layout__header-row
+            span.mdl-layout-title
+              = t 'app.name'
+
+        main.mdl-layout__content
+          .page-content
+            = yield
+

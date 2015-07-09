@@ -1,0 +1,12 @@
+section.section--center.mdl-grid
+  .mdl-cell.mdl-card.mdl-shadow--2dp.mdl-cell--12-col
+    .mdl-card__title
+      h3.mdl-card_title-text
+        = poll.title
+    .mdl-card__supporting-text
+        = poll.description
+    .mdl-card__actions.mdl-card--border
+        = link_to content_tag(:i, 'thumb-up', class: 'material-icons'),
+          root_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored'
+        = link_to content_tag(:i, 'thumb-down', class: 'material-icons'),
+          root_path, class: 'mdl-button mdl-js-button mdl-button--fab mdl-button--colored'
