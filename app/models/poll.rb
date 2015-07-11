@@ -1,22 +1,16 @@
 class Poll < ActiveRecord::Base
-  has_many :votes
+  has_many :votes, inverse_of: :poll
 
   validates_presence_of :title
 
-  def result_yes_votes
-    percent_of(votes.yes_votes)
+  default_scope -> { order(created_at: :desc) }
+
+  def yes_votes
+    votes.yes_votes.size
   end
 
-  def result_no_votes
-    percent_of(votes.no_votes)
+  def no_votes
+    votes.no_votes.size
   end
 
-  private
-    def percent_of(votes_type)
-      if votes_type.size > 0
-        (votes_type.size * 100.0 / votes.size).round
-      else
-        0
-      end
-    end
 end
