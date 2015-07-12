@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require material-design-lite
+//= require jquery.easy-pie-chart
 //= require turbolinks
 //= require_tree .

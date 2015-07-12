@@ -36,6 +36,7 @@ gem "slim"
 gem "slim-rails"
 source 'https://rails-assets.org' do
   gem 'rails-assets-material-design-lite'
+  gem 'rails-assets-jquery.easy-pie-chart'
 end
 
 group :development, :test do

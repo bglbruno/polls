@@ -1,22 +1,48 @@
+$red: rgb(255,82,82);
+$green: rgb(139,195,74);
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .align-center{ text-align: center;}
 .align-left{ text-align: left;}
 .align-right{ text-align: right;}
+.hide{display: none;}
 
+.poll h3{margin: 2% 0;}
 form{ width: 100%;}
-
 .section-poll{
   background-color: #fff;
   margin: 1% 0;
 }
 .votes-result{
+  margin-top: 20px;
   .vote_option{
     display: inline;
-    margin: 0 2%;
-    form{ display: inline; }
-    .result{
-      padding: 3%;
-    }
+    form{display: inline;}
   }
-  .yes_votes{color: green;}
-  .no_votes{color: red;}
+  .yes_votes{color: $green;}
+  .no_votes{color: $red;}
+  .chart{display: inline;}
+}
+button.vote_button{
+  font-size: 48px;
+  width: 23%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  &:hover{
+    color: #fff;
+    transition: all .2s linear;
+  }
+  &.yes_votes:hover{background-color: $green;}
+  &.no_votes:hover{background-color: $red;}
+  
+  padding: 1%;
+  i.material-icons{
+    font-size: 48px;
+    display: block;
+  }
 }

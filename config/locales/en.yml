@@ -9,3 +9,7 @@ en:
       create: 'Add poll'
     poll:
       votes: 'Votes'
+      people_voted:
+        zero: 'Nobody votes'
+        one: 'One people vote'
+        other: '%{count} peoples votes'

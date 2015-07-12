@@ -1,29 +1,34 @@
 section.section-poll.mdl-shadow--2dp
   .mdl-grid
-    .mdl-cell.mdl-cell--12-col
-      .mdl-grid
-        .mdl-cell.mdl-cell--12-col-tablet.mdl-cell--6-col.align-center
-          = t 'created_at'
-          = time_tag poll.created_at
-          h3
-            = link_to poll.title, poll
-        .mdl-cell.mdl-cell--12-col-tablet.mdl-cell--6-col.align-center
-          = t '.votes'
-          h3
-            .votes-result
-              .vote_option
-                = form_for([poll, poll.votes.build]) do |f|
-                  = f.hidden_field :answer, value: true
-                  = f.button :submit, class: 'mdl-button mdl-js-button mdl-button--icon yes_votes' do
-                    i.material-icons
-                      | thumb_up
-                span.result
-                  = poll.yes_votes
-              .vote_option 
-                = form_for([poll, poll.votes.build]) do |f|
-                  = f.hidden_field :answer, value: false
-                  = f.button :submit, class: 'mdl-button mdl-js-button mdl-button--icon no_votes' do
-                    i.material-icons
-                      | thumb_down
-                span.result
-                  = poll.no_votes
+    .mdl-cell.mdl-cell--12-col.align-center
+      .poll
+        = t 'created_at'
+        = time_tag poll.created_at
+        h3
+          = link_to poll.title, poll
+
+      .votes-result
+        .vote_option
+          = form_for([poll, poll.votes.build]) do |f|
+            = f.hidden_field :answer, value: true
+            = f.button :submit, class: 'vote_button yes_votes' do
+              = t('yes')
+              i.material-icons
+                | thumb_up
+        .vote_option 
+          = form_for([poll, poll.votes.build]) do |f|
+            = f.hidden_field :answer, value: false
+            = f.button :submit, class: 'vote_button no_votes' do
+              = t('no')
+              i.material-icons
+                | thumb_down
+    .mdl-grid
+      .mdl-cell.mdl-cell--12-col
+        .stats.hide
+          .chart.yes data={percent: poll.votes_percent(:yes)}
+          .chart.no data={percent: poll.votes_percent(:no)}
+
+        .action.align-center
+          button.mdl-button.mdl-js-button.mdl-button--icon
+            i.material-icons
+              | expand_more
