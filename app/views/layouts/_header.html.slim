@@ -4,7 +4,8 @@
           = t ('app.name')
         .mdl-layout-spacer
         nav.mdl-navigation
-          = link_to t('.newers'), filter_polls_path(:recents), class: 'mdl-navigation__link'
+          = link_to t('.nav.new_poll'), new_poll_path, class: 'mdl-navigation__link'
+          = link_to t('.nav.newers'), filter_polls_path(:recents), class: 'mdl-navigation__link'
           = link_to t('.nav.most_voted'), filter_polls_path(:most_voted), class: 'mdl-navigation__link'
           = link_to t('.nav.last_voted'), filter_polls_path(:last_voted), class: 'mdl-navigation__link'
         .mdl-textfield.mdl-js-textfield.mdl-textfield--expandable.mdl-textfield--floating-label.mdl-textfield--align-right

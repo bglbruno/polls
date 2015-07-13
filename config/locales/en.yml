@@ -6,7 +6,8 @@ en:
     edit:
       title: 'Edit poll'
     form:
-      create: 'Add poll'
+      add: 'Create a Poll'
+      create: 'create'
     poll:
       votes: 'Votes'
       yes_vote: 'Yes'

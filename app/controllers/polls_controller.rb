@@ -3,20 +3,20 @@ class PollsController < ApplicationController
   respond_to :html
 
   def index
-    if params[:filter].blank?
+    if params[:filter].blank? || params[:filter] == :recents.to_s
       @polls = Poll.recents
     elsif params[:filter] == :most_voted.to_s
       @polls = Poll.most_voted 
-    elsif
+    elsif params[:filter] == :last_voted.to_s
       @polls = Poll.last_voted
     end
+  end
+  
+  def new
     @poll = Poll.new
   end
 
   def show
-  end
-
-  def edit
   end
 
   def create

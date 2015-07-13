@@ -1,8 +1,9 @@
 section.add-poll.align-center
+  h2
+    = t('.add')
   = form_for @poll do |f|
-    .mdl-grid
-      .mdl-cell.mdl-cell--12-col.align-center
-        .mdl-textfield.mdl-js-textfield
-          = f.text_field :title, class: 'mdl-textfield__input'
-          = f.label :title, class: 'mdl-textfield__label'
-        = f.submit t('.create'), class: 'mdl-button mdl-js-button mdl-button--raised'
+    .mdl-textfield.mdl-js-textfield
+      = f.text_field :title, class: 'mdl-textfield__input'
+      = f.label :title, class: 'mdl-textfield__label'
+    .action
+      = f.submit t('.create'), class: 'mdl-button mdl-js-button mdl-button--raised'

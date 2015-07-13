@@ -1,4 +1,4 @@
-$(function() {
+function ready() {
   $('.chart.yes').easyPieChart({
     barColor: '#8bc34a',
     lineWidth: 5,
@@ -21,4 +21,6 @@ $(function() {
     }
   });
 
-});
+};
+$(document).ready(ready);
+$(document).on('page:load', ready);
