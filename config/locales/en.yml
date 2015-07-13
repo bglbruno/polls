@@ -12,6 +12,10 @@ en:
       votes: 'Votes'
       yes_vote: 'Yes'
       no_vote: 'No'
+      total_votes:
+        zero: 'No votes'
+        one: 'One vote in total'
+        other: '%{count} votes in total'
       people_voted:
         zero: 'Nobody votes'
         one: 'One people vote'

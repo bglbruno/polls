@@ -4,6 +4,9 @@ section.section-poll.mdl-shadow--2dp
       .poll
         = t 'created_at'
         = time_tag poll.created_at
+        .total_votes
+          strong
+            = t '.total_votes', count: poll.votes.size
         h3
           = link_to poll.title, poll
 
@@ -23,7 +26,7 @@ section.section-poll.mdl-shadow--2dp
               i.material-icons
                 | thumb_down
       .stats_container
-        .stats.align-center.expanded
+        .stats.align-center.hide
           h4
             = t '.stats'
           .chart_container
