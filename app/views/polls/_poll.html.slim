@@ -22,10 +22,30 @@ section.section-poll.mdl-shadow--2dp
               = t('no')
               i.material-icons
                 | thumb_down
-      - unless content_for(:stats).blank?
-        = yield :stats
+      .stats_container
+        .stats.align-center.hide
+          h4
+            = t '.stats'
+          .chart_container
+            strong
+              = poll.votes_percent :yes
+              | %
+            .chart.yes data={percent: poll.votes_percent(:yes)}
+          .chart_container
+            .chart.no data={percent: poll.votes_percent(:no)}
+            strong
+              = poll.votes_percent :no
+              | %
+          .people_voted
+            span.yes
+              strong
+                = t '.yes_vote'
+              = t '.people_voted', count:  poll.votes_size(:yes)
+            span.no
+              strong
+                = t '.no_vote'
+              = t '.people_voted', count:  poll.votes_size(:no)
 
-      .action.align-center
-        button.mdl-button.mdl-js-button.mdl-button--icon
+        button.mdl-button.mdl-js-button.mdl-button--icon.btn_stats
           i.material-icons
-            | expand_more
+            | more_horiz

@@ -9,7 +9,8 @@ en:
       create: 'Add poll'
     poll:
       votes: 'Votes'
-    show:
+      yes_vote: 'Yes'
+      no_vote: 'No'
       people_voted:
         zero: 'Nobody votes'
         one: 'One people vote'

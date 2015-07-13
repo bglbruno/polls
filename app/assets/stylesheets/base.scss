@@ -6,6 +6,7 @@ $green: rgb(139,195,74);
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+body { font-size: 27px;}
 .align-center{ text-align: center;}
 .align-left{ text-align: left;}
 .align-right{ text-align: right;}
@@ -26,7 +27,7 @@ form{ width: 100%;}
   .no_votes{color: $red;}
 }
 button.vote_button{
-  font-size: 48px;
+  font-size: 2em;
   width: 23%;
   margin: 0 4%;
   background-color: transparent;
@@ -50,16 +51,22 @@ button.vote_button{
 .stats{
   .chart_container{
     display: inline;
+    margin: 0 3%;
     .chart{display: inline;}
   }
   .people_voted{
     padding: 3%;
     span{
+      display: inline-block;
       padding: 1%;
       margin: 2%;
       color: #fff;
       &.yes{background-color: $green;}
       &.no{background-color: $red;}
+      strong{
+        display: block;
+        padding: 1%;
+      }
     }
   }
 }
