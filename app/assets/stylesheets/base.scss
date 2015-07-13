@@ -18,21 +18,22 @@ form{ width: 100%;}
   margin: 1% 0;
 }
 .votes-result{
-  margin-top: 20px;
   .vote_option{
     display: inline;
     form{display: inline;}
   }
   .yes_votes{color: $green;}
   .no_votes{color: $red;}
-  .chart{display: inline;}
 }
 button.vote_button{
   font-size: 48px;
   width: 23%;
+  margin: 0 4%;
   background-color: transparent;
   border: none;
   cursor: pointer;
+  &.yes_votes{border: 1px solid $green;}
+  &.no_votes{border: 1px solid  $red;}
   &:hover{
     color: #fff;
     transition: all .2s linear;
@@ -44,5 +45,21 @@ button.vote_button{
   i.material-icons{
     font-size: 48px;
     display: block;
+  }
+}
+.stats{
+  .chart_container{
+    display: inline;
+    .chart{display: inline;}
+  }
+  .people_voted{
+    padding: 3%;
+    span{
+      padding: 1%;
+      margin: 2%;
+      color: #fff;
+      &.yes{background-color: $green;}
+      &.no{background-color: $red;}
+    }
   }
 }

@@ -1,9 +1,11 @@
 class VotesController < ApplicationController
-
+  respond_to :js, :html
   def create
     @poll = Poll.find(params[:poll_id])
     @poll.votes.create(vote_params)
-    redirect_to polls_path, notice: I18n.t(:success, scope: :messages)
+    respond_with @poll do |format|
+      format.js { render nothing: true }
+    end
   end
 
   private

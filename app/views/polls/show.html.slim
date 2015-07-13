@@ -1,1 +1,20 @@
+= content_for :stats do
+  .stats.align-center
+    h4
+      = t '.stats'
+    .chart_container
+      strong
+        = @poll.votes_percent :yes
+        | %
+      .chart.yes data={percent: @poll.votes_percent(:yes)}
+    .chart_container
+      .chart.no data={percent: @poll.votes_percent(:no)}
+      strong
+        = @poll.votes_percent :no
+        | %
+    .people_voted
+      span.yes
+        = t '.people_voted', count:  @poll.votes_size(:yes)
+      span.no
+        = t '.people_voted', count:  @poll.votes_size(:no)
 = render @poll

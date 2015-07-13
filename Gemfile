@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "slim"
 gem "slim-rails"
+gem 'responders', '~> 2.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-material-design-lite'
   gem 'rails-assets-jquery.easy-pie-chart'
