@@ -4,11 +4,11 @@ class PollsController < ApplicationController
 
   def index
     if params[:filter].blank? || params[:filter] == :recents.to_s
-      @polls = Poll.recents
+      @polls = Poll.recents.page params[:page]
     elsif params[:filter] == :most_voted.to_s
-      @polls = Poll.most_voted 
+      @polls = Poll.most_voted.page params[:page]
     elsif params[:filter] == :last_voted.to_s
-      @polls = Poll.last_voted
+      @polls = Poll.last_voted.page params[:page]
     end
   end
   
