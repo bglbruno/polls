@@ -2,6 +2,14 @@ en:
   app:
     name: 'Polls'
   created_at: 'Created at: '
+  layouts:
+    header:
+      nav:
+        new_poll: 'New Poll'
+        newers: 'Newers'
+        most_voted: 'Most Voted'
+        last_voted: 'Last Voted'
+        no_voted: 'No Voted'
   polls:
     index:
       no_polls: 'No Polls'
