@@ -34,7 +34,7 @@ class PollsController < ApplicationController
 
   def destroy
     @poll.destroy
-    respond_to nil, location: polls_url
+    redirect_to polls_path
   end
 
   private

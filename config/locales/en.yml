@@ -24,6 +24,7 @@ en:
       votes: 'Votes'
       yes_vote: 'Yes'
       no_vote: 'No'
+      destroy: 'Destroy poll'
       total_votes:
         zero: 'No votes'
         one: 'One vote in total'

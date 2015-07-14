@@ -2,11 +2,15 @@ section.section-poll.mdl-shadow--2dp
   .mdl-grid
     .mdl-cell.mdl-cell--12-col.align-center
       .poll
-        = t 'created_at'
-        = time_tag poll.created_at
-        .total_votes
-          strong
-            = t '.total_votes', count: poll.votes.size
+        header.header-poll
+          = t 'created_at'
+          = time_tag poll.created_at
+          = link_to poll_path(:id => poll.id), data: { confirm: I18n.t("are_you_sure") },
+          :method => :delete, class: 'mdl-button mdl-js-button mdl-button--icon' do
+            = content_tag(:i, 'delete', class: 'material-icons')
+          .total_votes
+            strong
+              = t '.total_votes', count: poll.votes.size
         h3
           = link_to poll.title, poll
 
@@ -48,6 +52,7 @@ section.section-poll.mdl-shadow--2dp
               strong
                 = t '.no_vote'
               = t '.people_voted', count:  poll.votes_size(:no)
+
 
         button.mdl-button.mdl-js-button.mdl-button--icon.btn_stats
           i.material-icons
