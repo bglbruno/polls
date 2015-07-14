@@ -2,6 +2,7 @@ en:
   app:
     name: 'Polls'
   created_at: 'Created at: '
+  are_you_sure: 'Are you sure?'
   layouts:
     header:
       nav:
