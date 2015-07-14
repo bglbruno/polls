@@ -1,3 +1,7 @@
-= render @polls
-.paginate_container.align-center
-  = paginate @polls
+- unless @polls.blank?
+  = render @polls 
+  .paginate_container.align-center
+    = paginate @polls
+- if @polls.blank?
+  h2.no_polls.align-center
+    = t('.no_polls')

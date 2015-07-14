@@ -1,6 +1,8 @@
 en:
   created_at: 'Created at: '
   polls:
+    index:
+      no_polls: 'No Polls'
     new:
       title: 'New poll'
     edit:
