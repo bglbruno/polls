@@ -13,6 +13,8 @@ gem "slim"
 gem "slim-rails"
 gem 'responders', '~> 2.0'
 gem 'kaminari'
+gem 'puma'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-material-design-lite'
   gem 'rails-assets-jquery.easy-pie-chart'
