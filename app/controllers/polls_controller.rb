@@ -9,6 +9,8 @@ class PollsController < ApplicationController
       @polls = Poll.most_voted.page params[:page]
     elsif params[:filter] == :last_voted.to_s
       @polls = Poll.last_voted.page params[:page]
+    elsif params[:filter] == :no_voted.to_s
+      @polls = Poll.no_voted.page params[:page]
     end
   end
   
