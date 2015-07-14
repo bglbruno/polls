@@ -1,5 +1,5 @@
 class Poll < ActiveRecord::Base
-  has_many :votes, inverse_of: :poll
+  has_many :votes, inverse_of: :poll, dependent: :delete_all
 
   validates_presence_of :title
 
