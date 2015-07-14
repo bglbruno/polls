@@ -1,4 +1,6 @@
 en:
+  app:
+    name: 'Polls'
   created_at: 'Created at: '
   polls:
     index:
